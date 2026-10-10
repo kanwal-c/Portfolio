@@ -1,0 +1,799 @@
+/* =========================================
+   KANWAL YOUNAS — PERSONAL PORTFOLIO
+   Internship Level 1 — Task 2
+   Original portfolio styling
+   ========================================= */
+
+
+/* ---------- 1. DESIGN VARIABLES ---------- */
+
+:root {
+    --primary: #5b4bdb;
+    --primary-dark: #4537b5;
+    --primary-soft: #eeecff;
+
+    --dark: #171827;
+    --text: #505267;
+    --muted: #777b8f;
+
+    --background: #ffffff;
+    --soft-background: #f8f8fc;
+
+    --border: #e6e6ee;
+    --white: #ffffff;
+
+    --container: 1120px;
+}
+
+
+/* ---------- 2. RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--text);
+    background: var(--background);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: min(90%, var(--container));
+    margin: 0 auto;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+
+/* ---------- 3. NAVIGATION ---------- */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-bottom: 1px solid var(--border);
+
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.logo {
+    color: var(--dark);
+
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: var(--text);
+
+    font-size: 0.88rem;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--primary);
+
+    transition: width 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-button {
+    padding: 10px 17px;
+
+    color: var(--white);
+    background: var(--primary);
+
+    border-radius: 8px;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+
+/* ---------- 4. HERO ---------- */
+
+.hero {
+    min-height: calc(100vh - 72px);
+
+    display: flex;
+    align-items: center;
+
+    padding: 90px 0;
+
+    background:
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(91, 75, 219, 0.12),
+            transparent 28%
+        ),
+        linear-gradient(
+            180deg,
+            #ffffff,
+            #fafaff
+        );
+}
+
+.hero-container {
+    display: grid;
+
+    grid-template-columns: 1.15fr 0.85fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero-label {
+    display: inline-block;
+
+    margin-bottom: 18px;
+
+    color: var(--primary);
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+.hero h1 {
+    margin-bottom: 10px;
+
+    color: var(--dark);
+
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.03;
+
+    letter-spacing: -0.055em;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--primary);
+}
+
+.hero h2 {
+    margin-bottom: 22px;
+
+    color: var(--dark);
+
+    font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+    font-weight: 600;
+}
+
+.hero-content > p {
+    max-width: 590px;
+
+    margin-bottom: 32px;
+
+    color: var(--muted);
+
+    font-size: 1rem;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+
+/* ---------- 5. BUTTONS ---------- */
+
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+
+    padding: 0 21px;
+
+    border-radius: 9px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.primary-button {
+    color: var(--white);
+    background: var(--primary);
+
+    box-shadow: 0 9px 22px rgba(91, 75, 219, 0.2);
+}
+
+.primary-button:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 13px 28px rgba(91, 75, 219, 0.25);
+}
+
+.secondary-button {
+    color: var(--dark);
+    background: var(--white);
+
+    border: 1px solid var(--border);
+}
+
+.secondary-button:hover {
+    color: var(--primary);
+
+    border-color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+/* ---------- 6. PROFILE AREA ---------- */
+
+.profile-area {
+    position: relative;
+
+    width: 360px;
+    height: 360px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto;
+}
+
+.profile-circle {
+    width: 285px;
+    height: 285px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f0eeff,
+            #dedbff
+        );
+
+    border: 1px solid #d8d4ff;
+
+    box-shadow:
+        0 30px 60px rgba(91, 75, 219, 0.15);
+
+    position: relative;
+    z-index: 2;
+}
+
+.avatar-placeholder {
+    width: 205px;
+    height: 205px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: var(--white);
+
+    font-size: 3.5rem;
+    font-weight: 800;
+
+    letter-spacing: -0.05em;
+}
+
+.profile-decoration {
+    position: absolute;
+
+    border-radius: 50%;
+}
+
+.decoration-one {
+    width: 70px;
+    height: 70px;
+
+    top: 15px;
+    right: 5px;
+
+    background: #dcd8ff;
+}
+
+.decoration-two {
+    width: 42px;
+    height: 42px;
+
+    bottom: 25px;
+    left: 15px;
+
+    background: var(--primary);
+}
+
+
+/* ---------- 7. SECTION HEADINGS ---------- */
+
+.section-heading {
+    max-width: 500px;
+}
+
+.section-heading.centered {
+    max-width: 650px;
+
+    margin: 0 auto 55px;
+
+    text-align: center;
+}
+
+.section-label {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--primary);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+.section-heading h2,
+.contact-content h2 {
+    color: var(--dark);
+
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    line-height: 1.12;
+
+    letter-spacing: -0.04em;
+}
+
+.section-heading p {
+    margin-top: 14px;
+
+    color: var(--muted);
+
+    font-size: 0.92rem;
+}
+
+
+/* ---------- 8. ABOUT ---------- */
+
+.about {
+    background: var(--soft-background);
+}
+
+.about-container {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 90px;
+
+    align-items: start;
+}
+
+.about-content {
+    padding-top: 8px;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+
+    color: var(--text);
+
+    font-size: 0.96rem;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* ---------- 9. SKILLS ---------- */
+
+.skills {
+    background: var(--white);
+}
+
+.skills-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.skill-card {
+    position: relative;
+
+    min-height: 170px;
+
+    padding: 26px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.skill-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background: var(--primary);
+
+    transform: scaleY(0);
+
+    transform-origin: bottom;
+
+    transition: transform 0.25s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #d8d4ff;
+
+    box-shadow: 0 15px 30px rgba(23, 24, 39, 0.07);
+}
+
+.skill-card:hover::before {
+    transform: scaleY(1);
+}
+
+.skill-number {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: #a2a4b3;
+
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.skill-card h3 {
+    margin-bottom: 6px;
+
+    color: var(--dark);
+
+    font-size: 1rem;
+}
+
+.skill-card p {
+    color: var(--muted);
+
+    font-size: 0.8rem;
+}
+
+
+/* ---------- 10. PROJECTS ---------- */
+
+.projects {
+    background: var(--soft-background);
+}
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+.project-card {
+    padding: 30px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 18px 35px rgba(23, 24, 39, 0.08);
+}
+
+.project-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 30px;
+}
+
+.project-tag {
+    padding: 6px 9px;
+
+    border-radius: 5px;
+
+    background: var(--primary-soft);
+    color: var(--primary);
+
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+
+.project-number {
+    color: #b1b2bd;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.project-card h3 {
+    margin-bottom: 12px;
+
+    color: var(--dark);
+
+    font-size: 1.3rem;
+}
+
+.project-card p {
+    min-height: 80px;
+
+    margin-bottom: 22px;
+
+    color: var(--muted);
+
+    font-size: 0.87rem;
+}
+
+.project-link {
+    color: var(--primary);
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    transition: color 0.2s ease;
+}
+
+.project-link:hover {
+    color: var(--primary-dark);
+}
+
+
+/* ---------- 11. CONTACT ---------- */
+
+.contact {
+    background: var(--white);
+}
+
+.contact-container {
+    display: grid;
+
+    grid-template-columns: 0.9fr 1.1fr;
+
+    gap: 90px;
+
+    align-items: start;
+}
+
+.contact-content p {
+    max-width: 450px;
+
+    margin-top: 18px;
+
+    color: var(--muted);
+
+    font-size: 0.92rem;
+}
+
+.contact-details {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+.contact-item {
+    padding: 20px;
+
+    background: var(--soft-background);
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.contact-item span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--muted);
+
+    font-size: 0.7rem;
+    font-weight: 600;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.contact-item strong,
+.contact-item a {
+    color: var(--dark);
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+    color: var(--primary);
+}
+
+
+/* ---------- 12. FOOTER ---------- */
+
+.footer {
+    padding: 40px 0 25px;
+
+    background: #151623;
+
+    color: var(--white);
+}
+
+.footer-container {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+}
+
+.footer .logo {
+    color: var(--white);
+}
+
+.footer p {
+    margin-top: 7px;
+
+    color: #9497a7;
+
+    font-size: 0.75rem;
+}
+
+.footer-container > p {
+    margin-top: 0;
+}
+
+
+/* =========================================
+   13. RESPONSIVE DESIGN
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .hero-container {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 55px;
+    }
+
+    .hero-content {
+        margin: 0 auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .profile-area {
+        width: 320px;
+        height: 320px;
+    }
+}
